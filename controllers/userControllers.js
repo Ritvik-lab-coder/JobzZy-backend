@@ -85,7 +85,8 @@ export const login = async (request, response) => {
         return response.status(200).cookie('token', token, {
             httpOnly: true,
             maxAge: 24 * 60 * 60 * 1000,
-            sameSite: 'strict'
+            sameSite: 'None',
+            secure: true
         }).json({
             success: true,
             message: "Logged in successfully",
